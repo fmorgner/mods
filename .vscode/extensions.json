@@ -1,7 +1,7 @@
 {
     "recommendations": [
         "kylinideteam.cppdebug",
-        "kylinideteam.kylin-clangd",
+        "llvm-vs-code-extensions.vscode-clangd",
         "ms-vscode.cmake-tools"
     ]
 }
