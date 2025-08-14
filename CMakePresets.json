@@ -1,0 +1,57 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "default",
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/out/build",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_CONFIGURATION_TYPES": "Debug;Release",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true
+            }
+        },
+        {
+            "name": "develop",
+            "inherits": [
+                "default"
+            ],
+            "installDir": "${sourceDir}/out/install"
+        },
+        {
+            "name": "release",
+            "inherits": [
+                "default"
+            ],
+            "cacheVariables": {
+                "CMAKE_CONFIGURATION_TYPES": "RelWithDebInfo;MinSizeRel"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "dev-debug",
+            "displayName": "debug",
+            "configurePreset": "develop",
+            "configuration": "Debug"
+        },
+        {
+            "name": "dev-release",
+            "displayName": "release",
+            "configurePreset": "develop",
+            "configuration": "Release"
+        },
+        {
+            "name": "rel-debug",
+            "displayName": "debug",
+            "configurePreset": "release",
+            "configuration": "RelWithDebInfo"
+        },
+        {
+            "name": "rel-release",
+            "displayName": "release",
+            "configurePreset": "release",
+            "configuration": "MinSizeRel"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "kylinideteam.cppdebug",
+        "kylinideteam.kylin-clangd",
+        "ms-vscode.cmake-tools"
+    ]
+}
