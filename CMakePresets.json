@@ -7,18 +7,20 @@
             "binaryDir": "${sourceDir}/out/build",
             "hidden": true,
             "cacheVariables": {
-                "CMAKE_CONFIGURATION_TYPES": "Debug;Release",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": true,
                 "CMAKE_CXX_COMPILER": "clang++",
                 "CMAKE_EXPERIMENTAL_CXX_IMPORT_STD": "d0edc3af-4c50-42ea-a356-e2862fe7a444"
             }
         },
         {
-            "name": "develop",
+            "name": "debug",
             "inherits": [
                 "default"
             ],
-            "installDir": "${sourceDir}/out/install"
+            "installDir": "${sourceDir}/out/install",
+            "cacheVariables": {
+                "CMAKE_CONFIGURATION_TYPES": "Debug;Release"
+            }
         },
         {
             "name": "release",
@@ -32,15 +34,15 @@
     ],
     "buildPresets": [
         {
-            "name": "dev-debug",
+            "name": "deb-debug",
             "displayName": "debug",
-            "configurePreset": "develop",
+            "configurePreset": "debug",
             "configuration": "Debug"
         },
         {
             "name": "dev-release",
             "displayName": "release",
-            "configurePreset": "develop",
+            "configurePreset": "debug",
             "configuration": "Release"
         },
         {
