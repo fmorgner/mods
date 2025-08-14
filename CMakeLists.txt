@@ -6,22 +6,8 @@ project("mods"
     DESCRIPTION "Experiments with C++ modules"
 )
 
-add_executable("mods"
-    "src/main.cpp"
-)
+set(CMAKE_CXX_MODULE_STD YES)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
 
-target_sources("mods" PRIVATE
-    FILE_SET CXX_MODULES
-    BASE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}"
-    FILES
-    "src/math.cppm"
-)
-
-target_compile_features("mods" PRIVATE
-    "cxx_std_23"
-)
-
-set_target_properties("mods" PROPERTIES
-    CXX_MODULE_STD YES
-    INTERPROCEDURAL_OPTIMIZATION ON
-)
+add_subdirectory("app")
+add_subdirectory("lib")
